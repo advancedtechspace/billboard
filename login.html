@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/logo.svg" type="image/x-icon" />
+    <!-- <link rel="stylesheet" href="libraries/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="libraries/css/sweetalert2.min.css" />
+    <script src="libraries/js/sweetalert2.min.js"></script> -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Panel</title>
+  </head>
+  <body>
+    <div class="left">
+      <p>Levamos o seu empreendimento do limbo ao mundo.</p>
+      <p>
+        <i class="la la-phone-square la-lg"></i
+        ><span>847460853 / 872081978</span>
+      </p>
+    </div>
+    <div class="right">
+      <form>
+        <a href="/" class="logo">
+          <img src="assets/img/logo.svg" width="45" />
+          <h1>Panel</h1>
+        </a>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required autofocus />
+        <label for="pass">Senha:</label>
+        <input type="password" name="pass" required />
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </body>
+
+  <script src="js/config.js"></script>
+  <script>
+    if (localStorage.getItem("user") !== null) {
+      window.location.href = "/";
+    }
+
+    document.querySelector("form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = document.querySelector("button");
+      btn.disabled = true;
+      const form = new FormData(e.target);
+      const email = form.get("email");
+      const pass = form.get("pass");
+
+      const res = await fetch(api_url + "/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          app: "panel",
+        },
+        body: JSON.stringify({ email, pass }),
+      }).catch((error) => {
+        console.log(error);
+      });
+
+      if (res.status === 200) {
+        const data = await res.json();
+
+        localStorage.setItem("user", data.user._id);
+        window.location.href = '/';
+      }
+
+      btn.disabled = false;
+    });
+  </script>
+</html>

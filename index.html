@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/logo.svg" type="image/x-icon" />
+    <title>Panel</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Panel</h1>
+      <button id="btn-logout"><img src="assets/img/lock-solid.svg" width="15" alt="sign-out">Terminar sessão</button>
+    </header>
+    <main>
+      <h1>Total: <span id="total"></span></h1>
+      <form id="form">
+        <label for="url">Url do vídeo:</label>
+        <input type="url" name="url" id="url" required />
+        <label for="url">Dias de exibição:</label>
+        <input type="number" name="dias" id="dias" min="1" max="7" value="1" />
+        <button type="submit">Anunciar</button>
+      </form>
+
+      <table>
+        <h2>Meus anúncios</h2>
+        <thead>
+            <th>Url</th>
+            <th>Duração (dias)</th>
+            <th>Valor (Mt)</th>
+            <th>Estado</th>
+            <th>Acções</th>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

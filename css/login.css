@@ -1,0 +1,97 @@
+input:-webkit-autofill {
+  -webkit-text-fill-color: rgb(0, 0, 0) !important;
+  box-shadow: 0 0 0 30px white inset;
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+}
+
+input {
+  border: 1px solid #666;
+  margin-bottom: 10px;
+}
+
+body > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .left {
+  flex-direction: column;
+}
+
+body .left p {
+  width: 75%;
+  margin-top: 20px;
+}
+
+body .left i {
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 340px;
+  height: 370px;
+  margin: auto;
+  border-radius: 10px;
+  padding: 20px 25px;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input,
+button {
+  padding: 15px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  width: fit-content;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 414px) {
+  .left {
+    display: none;
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  form {
+    box-shadow: none;
+    background-color: unset;
+    padding: 20px;
+    height: 90%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  form {
+    background-color: #444;
+  }
+}
