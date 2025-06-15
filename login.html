@@ -9,21 +9,25 @@
     <script src="libraries/js/sweetalert2.min.js"></script> -->
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/login.css" />
-    <title>Panel</title>
+    <title>Bilboard</title>
   </head>
   <body>
     <div class="left">
       <p>Levamos o seu empreendimento do limbo ao mundo.</p>
       <p>
         <i class="la la-phone-square la-lg"></i
-        ><span>847460853 / 872081978</span>
+        ><div id="phone"
+          ><img src="./assets/img/phone-square.svg" alt="phone" width="20" />
+          <span>(+258) 847460853 / 872081978</span>
+          </div
+        >
       </p>
     </div>
     <div class="right">
       <form>
         <a href="/" class="logo">
           <img src="assets/img/logo.svg" width="45" />
-          <h1>Panel</h1>
+          <h1>Bilboard</h1>
         </a>
         <label for="email">Email:</label>
         <input type="email" name="email" required autofocus />
@@ -63,7 +67,7 @@
         const data = await res.json();
 
         localStorage.setItem("user", data.user._id);
-        window.location.href = '/';
+        window.location.href = "/";
       }
 
       btn.disabled = false;

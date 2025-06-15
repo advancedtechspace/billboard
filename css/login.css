@@ -1,7 +1,7 @@
 input:-webkit-autofill {
   -webkit-text-fill-color: rgb(0, 0, 0) !important;
-  box-shadow: 0 0 0 30px white inset;
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px rgba(0, 0, 0, .1) inset;
+  -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, .1) inset !important;
 }
 
 body {
@@ -35,6 +35,15 @@ body .left i {
   margin-right: 10px;
 }
 
+#phone {
+  display: flex;
+  align-items: center;
+}
+
+#phone img {
+  margin-right: 10px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -50,27 +59,15 @@ form label {
   margin-bottom: 5px;
 }
 
-form input,
-button {
+form input{
   padding: 15px;
+  font-size: 14px;
 }
 
-.logo {
-  margin-bottom: 20px;
-}
-
-.logo-container {
-  width: fit-content;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo img {
-  margin-right: 10px;
+form button {
+  padding: 15px;
+  width: 100%;
+  margin: auto;
 }
 
 @media screen and (max-width: 414px) {

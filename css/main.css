@@ -1,3 +1,7 @@
+:root {
+  --primary-color: #1b7246;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
@@ -10,11 +14,24 @@ a {
 
 button {
   cursor: pointer;
+  padding: 10px;
+  margin: auto 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
 input {
   background: none;
   border: 1px solid #444;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary-color)
 }
 
 header {
@@ -26,10 +43,29 @@ header {
   justify-content: space-between;
 }
 
+.logo-container {
+  width: fit-content;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo h1 {
+  color: var(--primary-color);
+  font-weight: lighter;
+}
+
+.logo img {
+  margin-right: 10px;
+}
+
 #btn-logout {
   display: flex;
   align-items: center;
-  background: none;
+  background: #222;
   border: 1px solid #444;
   padding: 5px;
 }
@@ -45,6 +81,7 @@ main {
 form {
   border: 1px solid #ccc;
   padding: 20px;
+  border-radius: 5px;
 }
 
 table {
